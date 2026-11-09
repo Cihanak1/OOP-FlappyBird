@@ -1,0 +1,16 @@
+## Build and output
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+
+## Visual Studio
+.vs/
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+
+## Windows
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
