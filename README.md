@@ -1,22 +1,20 @@
-# OOP - Flappy Bird
+# Flappy Bird
 
-## Proje Hakkında
-C# Windows Forms ve .NET 8 kullanılarak nesne tabanlı programlama prensipleriyle geliştirilen Flappy Bird 2D oyunu.
+C# Windows Forms ile yaptığım basit bir Flappy Bird oyunu.
 
 ## Kullanılan Teknolojiler
 - C#
-- .NET 8.0 (Windows Forms)
-- GDI+ Çizim Motoru
+- .NET 8
+- Windows Forms
 
 ## Özellikler
-- Temel `Bird` sınıfı ve nesne yönelimli tasarım
-- Kuş fiziği: yerçekimi ivmesi ve zıplama mekaniği
-- Timer tabanlı oyun döngüsü
+- Boşluk tuşuyla kuşu zıplatma
+- Kuşun yerçekimiyle düşüş hareketi
 
-## Kurulum
-1. `OOP-FlappyBird.sln` dosyasını Visual Studio ile açın.
-2. Başlangıç projesi olarak `FlappyBird` seçin.
-3. F5 veya Çalıştır butonuna basarak projeyi başlatın.
+## Çalıştırma
+1. Projeyi Visual Studio ile açın.
+2. F5 tuşuna basarak çalıştırın.
 
 ## Ekran Görüntüleri
-*Geliştirme ve doğrulama aşamasında eklenecektir.*
+
+*(Test aşamasında eklenecektir)*
