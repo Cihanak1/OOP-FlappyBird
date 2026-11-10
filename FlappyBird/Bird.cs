@@ -24,12 +24,6 @@ public class Bird
     {
         VelocityY += Gravity;
         Y += VelocityY;
-
-        if (Y < 0)
-        {
-            Y = 0;
-            VelocityY = 0;
-        }
     }
 
     public void Jump()
