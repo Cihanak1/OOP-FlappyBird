@@ -8,11 +8,11 @@ C# Windows Forms ile yaptığım basit bir Flappy Bird oyunu.
 - Windows Forms
 
 ## Özellikler
-- Boşluk tuşuyla kuşu zıplatma
-- Kuşun yerçekimiyle düşüş hareketi
-- Rastgele yükseklikte hareket eden boru engelleri
-- Kuş boruya veya sınırlara çarptığında oyunun durması
-- Boruları geçtikçe puan kazanma ve ekranda puan gösterimi
+- Boşluk tuşuyla kuşu hareket ettirme
+- Boruların arasından geçme
+- Çarpışınca oyunun bitmesi
+- Puan kazanma
+- R tuşu ile oyunu yeniden başlatma
 
 ## Çalıştırma
 1. Projeyi Visual Studio ile açın.
