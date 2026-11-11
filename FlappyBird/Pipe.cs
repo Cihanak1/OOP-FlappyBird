@@ -44,23 +44,10 @@ public class Pipe
 
     public void Draw(Graphics g)
     {
-        using (Brush pipeBrush = new SolidBrush(Color.FromArgb(115, 191, 46)))
-        using (Pen borderPen = new Pen(Color.FromArgb(80, 140, 30), 2))
-        {
-            Rectangle topRect = GetTopBounds();
-            g.FillRectangle(pipeBrush, topRect);
-            g.DrawRectangle(borderPen, topRect);
+        g.FillRectangle(Brushes.Green, GetTopBounds());
+        g.DrawRectangle(Pens.Black, GetTopBounds());
 
-            Rectangle bottomRect = GetBottomBounds();
-            g.FillRectangle(pipeBrush, bottomRect);
-            g.DrawRectangle(borderPen, bottomRect);
-
-            g.FillRectangle(pipeBrush, X - 3, TopHeight - 20, Width + 6, 20);
-            g.DrawRectangle(borderPen, X - 3, TopHeight - 20, Width + 6, 20);
-
-            int bottomY = TopHeight + Gap;
-            g.FillRectangle(pipeBrush, X - 3, bottomY, Width + 6, 20);
-            g.DrawRectangle(borderPen, X - 3, bottomY, Width + 6, 20);
-        }
+        g.FillRectangle(Brushes.Green, GetBottomBounds());
+        g.DrawRectangle(Pens.Black, GetBottomBounds());
     }
 }

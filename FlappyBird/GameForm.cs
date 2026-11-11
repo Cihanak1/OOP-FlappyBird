@@ -46,7 +46,7 @@ public partial class GameForm : Form
 
         int groundY = ClientSize.Height - GroundHeight;
 
-        if (bird.Y <= 0 || bird.Y + bird.Height >= groundY)
+        if (bird.Y <= 0 || bird.Y + bird.Size >= groundY)
         {
             GameOver();
             return;
@@ -131,10 +131,7 @@ public partial class GameForm : Form
     {
         Graphics g = e.Graphics;
 
-        using (Brush skyBrush = new SolidBrush(Color.FromArgb(112, 197, 206)))
-        {
-            g.FillRectangle(skyBrush, 0, 0, ClientSize.Width, ClientSize.Height);
-        }
+        g.Clear(Color.LightSkyBlue);
 
         foreach (Pipe pipe in pipes)
         {
@@ -142,75 +139,42 @@ public partial class GameForm : Form
         }
 
         int groundY = ClientSize.Height - GroundHeight;
-        using (Brush grassBrush = new SolidBrush(Color.FromArgb(115, 191, 46)))
-        {
-            g.FillRectangle(grassBrush, 0, groundY, ClientSize.Width, 14);
-        }
-
-        using (Brush dirtBrush = new SolidBrush(Color.FromArgb(222, 216, 149)))
-        {
-            g.FillRectangle(dirtBrush, 0, groundY + 14, ClientSize.Width, GroundHeight - 14);
-        }
+        g.FillRectangle(Brushes.SandyBrown, 0, groundY, ClientSize.Width, GroundHeight);
+        g.DrawLine(Pens.Black, 0, groundY, ClientSize.Width, groundY);
 
         bird.Draw(g);
 
-        using (Font scoreFont = new Font("Segoe UI", 18, FontStyle.Bold))
-        using (Brush scoreBrush = new SolidBrush(Color.White))
-        using (Brush shadowBrush = new SolidBrush(Color.FromArgb(100, 0, 0, 0)))
+        using (Font scoreFont = new Font("Arial", 14, FontStyle.Bold))
         {
-            string scoreText = "Puan: " + score;
-            g.DrawString(scoreText, scoreFont, shadowBrush, 17, 17);
-            g.DrawString(scoreText, scoreFont, scoreBrush, 15, 15);
+            g.DrawString("Puan: " + score, scoreFont, Brushes.Black, 15, 15);
         }
 
         if (!isGameOver && pipes.Count == 0)
         {
-            using (Font hintFont = new Font("Segoe UI", 10, FontStyle.Bold))
-            using (Brush textBrush = new SolidBrush(Color.White))
-            using (Brush shadowBrush = new SolidBrush(Color.FromArgb(80, 0, 0, 0)))
+            using (Font hintFont = new Font("Arial", 11, FontStyle.Regular))
             {
                 string hint = "Zıplamak için Boşluk tuşuna basın";
                 SizeF size = g.MeasureString(hint, hintFont);
-                float x = (ClientSize.Width - size.Width) / 2;
-                float y = 55;
-
-                g.DrawString(hint, hintFont, shadowBrush, x + 1, y + 1);
-                g.DrawString(hint, hintFont, textBrush, x, y);
+                g.DrawString(hint, hintFont, Brushes.Black, (ClientSize.Width - size.Width) / 2, 50);
             }
         }
 
         if (isGameOver)
         {
-            int boxWidth = 320;
-            int boxHeight = 150;
-            int boxX = (ClientSize.Width - boxWidth) / 2;
-            int boxY = (ClientSize.Height - boxHeight) / 2 - 20;
-
-            using (Brush boxBrush = new SolidBrush(Color.FromArgb(190, 0, 0, 0)))
-            using (Pen borderPen = new Pen(Color.White, 2))
+            using (Font titleFont = new Font("Arial", 22, FontStyle.Bold))
+            using (Font textFont = new Font("Arial", 12, FontStyle.Regular))
             {
-                g.FillRectangle(boxBrush, boxX, boxY, boxWidth, boxHeight);
-                g.DrawRectangle(borderPen, boxX, boxY, boxWidth, boxHeight);
-            }
-
-            using (Font titleFont = new Font("Segoe UI", 20, FontStyle.Bold))
-            using (Font infoFont = new Font("Segoe UI", 13, FontStyle.Bold))
-            using (Font restartFont = new Font("Segoe UI", 10, FontStyle.Regular))
-            using (Brush redBrush = new SolidBrush(Color.Salmon))
-            using (Brush whiteBrush = new SolidBrush(Color.White))
-            using (Brush yellowBrush = new SolidBrush(Color.Gold))
-            {
-                string title = "Oyun Bitti";
+                string title = "Oyun Bitti!";
                 SizeF titleSize = g.MeasureString(title, titleFont);
-                g.DrawString(title, titleFont, redBrush, (ClientSize.Width - titleSize.Width) / 2, boxY + 16);
+                g.DrawString(title, titleFont, Brushes.Red, (ClientSize.Width - titleSize.Width) / 2, 220);
 
-                string scoreInfo = "Puan: " + score;
-                SizeF scoreSize = g.MeasureString(scoreInfo, infoFont);
-                g.DrawString(scoreInfo, infoFont, yellowBrush, (ClientSize.Width - scoreSize.Width) / 2, boxY + 60);
+                string scoreText = "Toplam Puan: " + score;
+                SizeF scoreSize = g.MeasureString(scoreText, textFont);
+                g.DrawString(scoreText, textFont, Brushes.Black, (ClientSize.Width - scoreSize.Width) / 2, 265);
 
-                string restartInfo = "Tekrar oynamak için R tuşuna bas";
-                SizeF restartSize = g.MeasureString(restartInfo, restartFont);
-                g.DrawString(restartInfo, restartFont, whiteBrush, (ClientSize.Width - restartSize.Width) / 2, boxY + 104);
+                string restartText = "Yeniden başlamak için R tuşuna basın";
+                SizeF restartSize = g.MeasureString(restartText, textFont);
+                g.DrawString(restartText, textFont, Brushes.Black, (ClientSize.Width - restartSize.Width) / 2, 305);
             }
         }
     }

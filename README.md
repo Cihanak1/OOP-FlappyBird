@@ -1,23 +1,20 @@
 # Flappy Bird
 
-C# Windows Forms ile yaptığım basit bir Flappy Bird oyunu.
+C# ile yaptığım basit bir Flappy Bird oyunu.
 
 ## Kullanılan Teknolojiler
 - C#
-- .NET 8
 - Windows Forms
+- .NET 8
 
 ## Özellikler
-- Boşluk tuşuyla kuşu hareket ettirme
-- Boruların arasından geçme
-- Çarpışınca oyunun bitmesi
+- Boşluk tuşuyla kuşu zıplatma
+- Hareket eden borular
 - Puan kazanma
-- R tuşu ile oyunu yeniden başlatma
+- Çarpışınca oyunun bitmesi
+- R tuşuyla yeniden başlatma
 
 ## Çalıştırma
-1. Projeyi Visual Studio ile açın.
-2. F5 tuşuna basarak çalıştırın.
+Projeyi Visual Studio ile açıp F5'e basarak çalıştırabilirsiniz.
 
 ## Ekran Görüntüleri
-
-*(Test aşamasında eklenecektir)*
