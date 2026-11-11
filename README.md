@@ -18,3 +18,7 @@ C# ile yaptığım basit bir Flappy Bird oyunu.
 Projeyi Visual Studio ile açıp F5'e basarak çalıştırabilirsiniz.
 
 ## Ekran Görüntüleri
+
+![Oyun](screenshots/oyun.png)
+
+![Oyun Bitti](screenshots/oyun-bitti.png)
